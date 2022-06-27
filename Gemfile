@@ -5,6 +5,7 @@ ruby '3.1.2'
 
 gem 'bootsnap', require: false
 gem 'cssbundling-rails'
+gem 'devise', '~> 4.8'
 gem 'jbuilder'
 gem 'jsbundling-rails'
 gem 'pg', '~> 1.1'
@@ -18,12 +19,14 @@ gem 'tzinfo-data'
 gem 'where_exists'
 
 group :development, :test do
+  gem 'bullet', '~> 7.0'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails', '~> 6.2'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails', '~> 6.0.rc1'
 end
 
 group :development do
-  gem 'rails-controller-testing'
-  gem 'rspec-rails', '~> 6.0.0.rc1'
   gem 'web-console'
 end
 
