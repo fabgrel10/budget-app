@@ -1,18 +1,30 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
-  <title>BudgetApp</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Budget App</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag "general", "data-turbo-track": "reload" %>
   <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
 </head>
 
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <%= yield %>
+  <div class="container">
+    <% if notice %>
+    <div class="notification is-warning">
+      <button class="delete"></button>
+      <%= notice %>
+    </div>
+    <% end %>
+    <% if alert %>
+    <div class="notification is-warning">
+      <button class="delete"></button>
+      <%= alert %>
+    </div>
+    <% end %>
+    <%= yield %>
+  </div>
 </body>
 </html>
