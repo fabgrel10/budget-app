@@ -1,11 +1,12 @@
-<div id="home-index">
+<div id="app-container">
   <div>
     <div class="has-text-centered" id="home-index__logo">
       <%= image_tag "logo.png", width: "300" %>
     </div>
     <div class="has-text-centered" id="home-index__buttons">
-      <%= link_to "LOG IN", new_user_session_path, class: "button is-primary mr-3" %>
-      <%= link_to "SIGN UP", new_user_registration_path, class: "button is-link" %>
+      <%= link_to "LOG IN", new_user_session_path, class: "button
+      is-light mr-3" %> <%= link_to "SIGN UP",
+      new_user_registration_path, class: "button is-dark" %>
     </div>
   </div>
 </div>
