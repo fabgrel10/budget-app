@@ -1,0 +1,28 @@
+<nav class="navbar is-link" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item has-text-weight-bold" href="#">
+      <img src="https://i.postimg.cc/7Zm04H7p/imageedit-5-2485494717.png" width="70" height="35" alt="Logo">
+    </a>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <%= link_to "Categories", categories_path, class: "navbar-item has-text-weight-bold" %>
+      <%= link_to "Expenses", categories_path, class: "navbar-item has-text-weight-bold" %>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "button is-small is-outlined" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
