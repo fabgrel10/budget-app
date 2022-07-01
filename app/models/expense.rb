@@ -1,6 +1,6 @@
 class Expense < ApplicationRecord
   belongs_to :user
-  has_and_belongs_to_many :categories
+  has_many :category_expenses, class_name: 'CategoryExpense', dependent: :destroy
 
   validates :name, presence: true, format: { with: /\A[a-zA-Z]+(?: [a-zA-Z]+)?\z/,
                                              message: 'Invalid category name!',
