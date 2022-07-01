@@ -1,0 +1,26 @@
+<div class='app-background'>
+  <%= render 'shared/navbar' %>
+  <div class='my-3 mx-5'>
+    <h2 class='is-size-3'>New Category</h2>
+  </div>
+
+  <%= form_with(scope: :categories, url: categories_path(@user), method: :post, local: true, html: { class: 'mx-5' },) do |form| %>
+    <div class="field">
+      <%= form.label :name, class: "is-size-5" %><br />
+      <div class="control">
+        <%= form.text_field :name, required: true, autofocus: true, autocomplete: "name", class: "input" %>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= form.label :image, class: "is-size-5" %><br />
+      <div class="control">
+        <%= form.file_field :icon, required: true, class: "file-label" %>
+      </div>
+    </div>
+
+    <div class="actions has-text-centered">
+      <%= form.submit "Add Category", class: "button is-success" %>
+    </div>
+  <% end %>
+</div>
