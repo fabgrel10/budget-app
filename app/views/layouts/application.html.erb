@@ -11,20 +11,11 @@
 </head>
 
 <body>
-  <div class="container">
-    <% if notice %>
-    <div class="notification is-warning">
-      <button class="delete"></button>
-      <%= notice %>
+  <%= render "shared/alerts" %>
+  <div class="app-container">
+    <div class="">
+      <%= yield %>
     </div>
-    <% end %>
-    <% if alert %>
-    <div class="notification is-warning">
-      <button class="delete"></button>
-      <%= alert %>
-    </div>
-    <% end %>
-    <%= yield %>
   </div>
 </body>
 </html>

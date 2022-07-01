@@ -1,3 +1,27 @@
-<h1>
-  Categories#Index
-</h1>
+<div id="app-container">
+  <div class='app-background'>
+    <%= render "shared/navbar" %>
+    <div class='category-user is-size-5'>
+      Welcome <%= @user.name %>!
+    </div>
+
+
+    <% @categories.each_with_index do |category| %>
+      <div class='category mb-3 mx-3'>
+        <div class='mr-5'>
+          <%= image_tag(category.category_thumbnail) %>
+        </div>
+        <ul class='category-name mr-3'>
+          <li class='is-size-3 has-text-grey'><%= category.name %></li>
+          <li class='has-text-grey'><%= category.created_at.strftime("%d %b %Y") %></li>
+        </ul>
+        <div class='category-total'>
+          <p class='is-size-3'>$<%= category.total_amount %> </p>
+        </div>
+      </div>
+    <% end %>
+    <div class='category-button has-text-centered'>
+      <%= link_to "Add Category", new_category_path, class: "button is-success " %>
+    </div>
+  </div>
+</div>
