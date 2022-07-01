@@ -7,5 +7,5 @@
 #   f.microphone  :none
 #   f.usb         :none
 #   f.fullscreen  :self
-#   f.payment     :self, "https://secure.example.com"
+#   f.expense     :self, "https://secure.example.com"
 # end
