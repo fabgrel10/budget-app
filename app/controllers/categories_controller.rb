@@ -1,2 +1,31 @@
 class CategoriesController < ApplicationController
+  def index
+    @user = current_user
+    @categories = @user.categories
+  end
+
+  def new
+    @category = Category.new
+  end
+
+  def create
+    @user = current_user
+    @category = Category.new(category_params)
+    @category.user_id = @user.id
+    respond_to do |format|
+      if @category.save
+        format.html do
+          redirect_to categories_path, notice: 'Category created successfully!'
+        end
+      else
+        format.html { redirect_to new_category_path, alert: 'Failed to create category!' }
+      end
+    end
+  end
+
+  private
+
+  def category_params
+    params.require(:categories).permit(:name, :icon)
+  end
 end
