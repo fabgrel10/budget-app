@@ -2,6 +2,7 @@ class Category < ApplicationRecord
   belongs_to :user
 
   has_many :category_expenses, class_name: 'CategoryExpense', dependent: :destroy
+  has_many :expenses, through: :category_expenses
   has_one_attached :icon
 
   validates :name, presence: true, format: { with: /\A[a-zA-Z]+(?: [a-zA-Z]+)?\z/,
