@@ -7,8 +7,8 @@
   <% @categories.each do |category| %>
     <%= render partial: "shared/category", locals: { category: category } %>
   <% end %>
-  <div class='category-button has-text-centered'>
-    <%= link_to "Add Category", new_category_path, class: "button is-success " %>
+  <div class='button-container has-text-centered'>
+    <%= link_to "Add Category", new_category_path, class: "button is-success is-fullwidth is-size-4" %>
   </div>
 </div>
 

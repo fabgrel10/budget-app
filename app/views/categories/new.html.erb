@@ -4,23 +4,23 @@
     <h2 class='is-size-3'>New Category</h2>
   </div>
 
-  <%= form_with(scope: :categories, url: categories_path(@user), method: :post, local: true, html: { class: 'mx-5' },) do |form| %>
+  <%= form_with scope: :categories, url: categories_path(@user), method: :post, local: true do |form| %>
     <div class="field">
-      <%= form.label :name, class: "is-size-5" %><br />
+      <%= form.label :name, class: "is-size-5 mx-5" %><br />
       <div class="control">
-        <%= form.text_field :name, required: true, autofocus: true, autocomplete: "name", class: "input" %>
+        <%= form.text_field :name, required: true, autofocus: true, autocomplete: "name", class: "input mx-5" %>
       </div>
     </div>
 
     <div class="field">
-      <%= form.label :image, class: "is-size-5" %><br />
+      <%= form.label :image, class: "is-size-5 mx-5" %><br />
       <div class="control">
-        <%= form.file_field :icon, required: true, class: "file-label" %>
+        <%= form.file_field :icon, required: true, class: "file-label mx-5" %>
       </div>
     </div>
 
-    <div class="actions has-text-centered">
-      <%= form.submit "Add Category", class: "button is-success" %>
+    <div class="button-container actions has-text-centered">
+      <%= form.submit "Add Category", class: "button is-success  ml-0 is-fullwidth is-size-4" %>
     </div>
   <% end %>
 </div>

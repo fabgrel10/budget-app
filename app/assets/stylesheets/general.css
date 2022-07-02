@@ -57,10 +57,20 @@
   width: 75%;
 }
 
+.expense-name {
+  width: 90%;
+}
+
 .category-total {
   line-height: 70px;
 }
 
-.category-button {
-  margin-top: 20px;
+.button-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.input {
+  width: 93%;
 }
