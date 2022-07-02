@@ -1,0 +1,9 @@
+<div class='category mx-5 my-3'>
+  <ul class='expense-name mr-3'>
+    <li class='is-size-4 has-text-grey'><%= expense.expense.name %></li>
+    <li class='has-text-grey'><%= expense.expense.created_at.strftime("%d %b %Y") %></li>
+  </ul>
+  <div class='category-total'>
+    <p class='is-size-4'>$<%= expense.expense.amount %> </p>
+  </div>
+</div>
