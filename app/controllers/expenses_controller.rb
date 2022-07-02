@@ -2,8 +2,7 @@ class ExpensesController < ApplicationController
   def index
     @user = current_user
     @category = Category.find(params[:category_id])
-    @category_expenses = CategoryExpense.includes(:expense)
-      .where(category_id: params[:category_id]).order(created_at: :desc)
+    @expenses = @category.category_expenses.includes([:expense])
   end
 
   def new
