@@ -2,7 +2,10 @@ require 'rails_helper'
 
 RSpec.describe Category, type: :model do
   let(:user) { User.create(name: 'John Doe', email: 'john_doe@mail.com', password: '123456') }
-  let(:category) { described_class.create(name: 'Shopping', user_id: user.id, icon: Rack::Test::UploadedFile.new('spec/example.jpeg', 'image/jpg')) }
+  let(:category) do
+    described_class.create(name: 'Shopping', user_id: user.id,
+                           icon: Rack::Test::UploadedFile.new('spec/example.jpeg', 'image/jpg'))
+  end
 
   describe 'Validations' do
     context 'when valid' do

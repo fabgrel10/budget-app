@@ -4,7 +4,10 @@ RSpec.describe 'Categories', type: :request do
   include Devise::Test::IntegrationHelpers
 
   let(:user) { User.create(name: 'John Doe', email: 'john_doe@mail.com', password: '123456') }
-  let(:category) { Category.create(name: 'Shopping', user_id: user.id, icon: Rack::Test::UploadedFile.new('spec/example.jpeg', 'image/jpg')) }
+  let(:category) do
+    Category.create(name: 'Shopping', user_id: user.id,
+                    icon: Rack::Test::UploadedFile.new('spec/example.jpeg', 'image/jpg'))
+  end
 
   describe 'GET /index' do
     before do
