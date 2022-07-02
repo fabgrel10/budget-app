@@ -1,0 +1,36 @@
+<div class='app-background'>
+  <%= render 'shared/navbar' %>
+  <div class='my-3 mx-5'>
+    <h2 class='is-size-3'>New Expense</h2>
+  </div>
+
+  <%= form_with url: category_expenses_path, method: :post do |form| %>
+    <div class="field">
+      <%= form.label :name, class: "is-size-5 mx-5" %><br />
+      <div class="control">
+        <%= form.text_field :name, required: true, autofocus: true, autocomplete: "name", class: "input mx-5" %>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= form.label :amount, class: "is-size-5 mx-5" %><br />
+      <div class="control mx-5">
+        <%= form.number_field :amount, required: true, autofocus: true, autocomplete: "amount", input_html: { min: '0', step: 'any' } %>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label mx-5">Category</label>
+      <div class="control">
+        <div class="select mx-5">
+          <%= form.select :categories, @categories.map { |category| [category.name, category.id] }, required: true, class: "select" %>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="actions has-text-centered button-container">
+      <%= form.submit "Add Expense", class: "button is-success is-fullwidth is-size-4" %>
+    </div>
+  <% end %>
+</div>

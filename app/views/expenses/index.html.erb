@@ -1,0 +1,19 @@
+<div class='app-background'>
+  <%= render "shared/navbar" %>
+
+  <div class='category-user is-size-6'>
+    <%= @user.name %>, you have <span class='has-text-link'><%= @expenses.count %></span> expenses in this category.
+  </div>
+
+  <%= render partial: "shared/category", locals: { category: @category } %>
+
+  <div class='item'>
+    <% @expenses.each do |expense| %>
+      <%= render partial: 'shared/expense', locals: { expense: expense } %>
+    <% end %>
+  </div>
+
+  <div class='button-container has-text-centered'>
+    <%= link_to "Add Expense", "/categories/#{@category.id}/expenses/new", class: "button is-success is-fullwidth is-size-4" %>
+  </div>
+</div>
