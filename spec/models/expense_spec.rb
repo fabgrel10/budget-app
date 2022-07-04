@@ -5,7 +5,7 @@ RSpec.describe Expense, type: :model do
     let(:user) { User.create(name: 'John Doe', email: 'john_doe@mail.com', password: '123456') }
     let(:category) do
       Category.create(name: 'Shopping', user_id: user.id,
-                      icon: Rack::Test::UploadedFile.new('spec/example.jpeg', 'image/jpg'))
+                      icon: Rack::Test::UploadedFile.new('spec/example.jpeg', 'image/jpeg'))
     end
     let(:expense) { described_class.create(name: 'Suit', amount: 12, user:) }
     let(:category_expense) { CategoryExpense.create(category_id: category.id, expense_id: expense.id) }
@@ -15,21 +15,21 @@ RSpec.describe Expense, type: :model do
         it { expect(expense).to be_valid }
       end
 
-      it 'valid expense_category' do
+      it 'validates expense_category' do
         expect(category_expense).to be_valid
       end
 
-      it 'valids name' do
+      it 'validates name' do
         expense.name = nil
         expect(expense).not_to be_valid
       end
 
-      it 'valids amount' do
+      it 'validates amount' do
         expense.amount = -10
         expect(expense).not_to be_valid
       end
 
-      it 'valids amount' do
+      it 'validates amount' do
         expense.amount = 10
         expect(expense).to be_valid
       end

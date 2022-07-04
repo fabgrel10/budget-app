@@ -4,7 +4,7 @@ RSpec.describe Category, type: :model do
   let(:user) { User.create(name: 'John Doe', email: 'john_doe@mail.com', password: '123456') }
   let(:category) do
     described_class.create(name: 'Shopping', user_id: user.id,
-                           icon: Rack::Test::UploadedFile.new('spec/example.jpeg', 'image/jpg'))
+                           icon: Rack::Test::UploadedFile.new('spec/example.jpeg', 'image/jpeg'))
   end
 
   describe 'Validations' do

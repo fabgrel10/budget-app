@@ -1,5 +1,6 @@
 require 'rails_helper'
-RSpec.describe 'Logins', type: :feature do
+
+RSpec.describe 'home', type: :feature do
   before { visit new_user_session_path }
 
   it 'displays email field' do
@@ -17,7 +18,7 @@ RSpec.describe 'Logins', type: :feature do
   context 'Form Submission' do
     it 'wrong password' do
       within 'form' do
-        fill_in 'Email', with: 'mymail@gmail.com'
+        fill_in 'Email', with: 'john_doe@mail.com'
         fill_in 'Password', with: ''
       end
       click_button 'Login'
@@ -25,7 +26,7 @@ RSpec.describe 'Logins', type: :feature do
     end
 
     it 'correct details' do
-      @user = User.create(name: 'Punzel', email: 'd@gmail.com', password: '123456')
+      @user = User.create(name: 'John Dow', email: 'john_doe@mail.com', password: '123456')
       within 'form' do
         fill_in 'Email', with: @user.email
         fill_in 'Password', with: @user.password

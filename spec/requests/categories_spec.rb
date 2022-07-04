@@ -26,7 +26,7 @@ RSpec.describe 'Categories', type: :request do
       get new_category_path
     end
 
-    it 'respons to html' do
+    it 'responds to html' do
       expect(response.content_type).to include 'text/html'
     end
   end
