@@ -6,7 +6,7 @@
 
 > Rails capstone project from the Microverse Full Stack  Development Bootcamp.
 
-![screenshot](./app/assets/images//app_screenshot.png)
+![screenshot](./app/assets/images/app_screenshot.png)
 
 ## Video Demo
 
@@ -49,8 +49,11 @@ cd recipe-app
 
 ### Install
 
-Install all the dependencies:
+Install all the dependencies, including [ImageMagic](https://imagemagick.org/script/index.php):
 
+```sh
+sudo apt install imagemagick
+```
 ```sh
 bundler install
 ```
@@ -68,6 +71,10 @@ Head to the [localhost:3000](http://localhost:3000) to see the app.
 
 ### Run tests
 
+```sh
+./bin/rspec
+```
+or
 ```sh
 bundle exec rspec spec
 ```
@@ -94,7 +101,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Microverse
+- Microverse.
+- Original design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella).
 
 ## 📝 License
 
