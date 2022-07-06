@@ -6,11 +6,7 @@
 
 > Rails capstone project from the Microverse Full Stack  Development Bootcamp.
 
-![screenshot](./app/assets/images/app_screenshot.png)
-
-## Video Demo
-
-[Google Drive](https://drive.google.com/file/d/1wd2wUDawmmUIhkMZz24bQNtmYyXEOr6q/view?usp=sharing)
+![screenshot](./app/assets/images/app_screenshot.gif)
 
 ## Live Demo
 
